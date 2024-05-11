@@ -3,10 +3,10 @@ Audit autonome Projet d'étude
 
 Pré requis:
 Pour utiliser mon programme il faudras télécharger:
-Flask
-Python
-Nmap
-
+Flask (pip install -U Flask)
+Python (https://www.python.org/downloads/windows/)
+Nmap ( https://nmap.org/download#windows)
+Afin de poursuivre je vous conseille de tout mettre dans un dossier. Une fois le CMD ouvert il vous suffiras de vous placer dans ce dossier vous pourrez le nommer à votre convenance ex:(cd path\...)
 Comment lancer le programme sous CMD:
 1. python -m venv env (Pour lancer un environnement virtuel)
 2. env\Scripts\activate (Activer l'environement)
