@@ -2,7 +2,7 @@
 Audit autonome Projet d'étude
 
 Pré requis:
-Pour utiliser ce programme il faudras télécharger:
+Pour utiliser mon programme il faudras télécharger:
 Flask
 Python
 Nmap
