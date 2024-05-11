@@ -1,5 +1,20 @@
 # Audit-SDV
 Audit autonome Projet d'étude
+
+Pré requis:
+Pour utiliser ce programme il faudras télécharger:
+Flask
+Python
+Nmap
+
+Comment lancer le programme sous CMD:
+1. python -m venv env (Pour lancer un environnement virtuel)
+2. env\Scripts\activate (Activer l'environement)
+3. pip install -r requirements.txt
+4. set FLASK_APP=app.py (Permet de sélectionné l'ensemble de l'applicatif python)
+5. Flask Run (Lance Flask avec l'applicatif)
+En cas de problème de version entré la commande suiavante: pip install --upgrade flask werkzeug puis reprendre l'étape 4 et 5.
+
 1. Introduction
 
 Le présent rapport vise à fournir une vue d'ensemble des différentes méthodes de test d'intrusion mises en œuvre dans l'application Toolbox de Test d'Intrusion. Ces méthodes couvrent divers aspects de la sécurité informatique, tels que le scan de ports, la détection de vulnérabilités, les tests XSS, les tests d'injection SQL, etc. Chaque méthode est conçue pour identifier des faiblesses potentielles dans un système informatique et contribuer à renforcer sa sécurité.
@@ -65,11 +80,3 @@ Résultat : Indique s'il existe des problèmes potentiels dans la validation des
 3. Conclusion
 
 La mise en œuvre de ces méthodes de test d'intrusion dans l'application Toolbox de Test d'Intrusion permet d'offrir aux utilisateurs un ensemble d'outils complet pour évaluer la sécurité de leurs systèmes informatiques. Ces méthodes couvrent un large éventail de vecteurs d'attaque potentiels et aident à identifier et à corriger les vulnérabilités avant qu'elles ne soient exploitées par des attaquants. En continuant à améliorer et à étendre ces méthodes, l'application peut contribuer à renforcer la résilience et la sécurité des systèmes informatiques contre les menaces actuelles et futures.
-
-Comment lancer le programme sous CMD:
-1. python -m venv env (Pour lancer un environnement virtuel)
-2. env\Scripts\activate (Activer l'environement)
-3. pip install -r requirements.txt
-4. set FLASK_APP=app.py (Permet de sélectionné l'ensemble de l'applicatif python)
-5. Flask Run (Lance Flask avec l'applicatif)
-En cas de problème de version entré la commande suiavante: pip install --upgrade flask werkzeug puis reprendre l'étape 4 et 5.
