@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Toolbox de Test d'Intrusion</title>
+</head>
+<body>
+    <h1>Toolbox de Test d'Intrusion</h1>
+    <!-- Formulaire permettant de sélectionner une tâche -->
+    <form method="post">
+        <label for="task">Sélectionnez une tâche:</label>
+        <!-- Sélecteur de tâches -->
+        <select name="task" id="task" onchange="showInputFields()">
+            <option value="">Sélectionner une tâche</option>
+            <option value="port_scan">Scan de Ports</option>
+            <option value="vulnerability_scan">Détection de Vulnérabilités</option>
+            <option value="xss_test">Test XSS</option>
+            <option value="security_config">Vérification de Configuration Sécurité</option>
+            <option value="sql_injection">Test Injection SQL</option>
+            <option value="sensitive_data_exposure">Test Exposition Données Sensibles</option>
+            <option value="cookie_security">Test Sécurité des Cookies</option>
+            <option value="session_management">Test Gestion des Sessions</option>
+            <option value="input_validation">Test Validation des Entrées</option>
+        </select>
+        <!-- Champ pour saisir l'adresse IP (affiché pour les tâches port_scan et security_config) -->
+        <div id="ip_input" style="display:none;">
+            <label for="ip_address">Adresse IP:</label>
+            <input type="text" name="ip_address" id="ip_address">
+        </div>
+        <!-- Champ pour saisir l'URL (affiché pour la tâche xss_test) -->
+        <div id="url_input" style="display:none;">
+            <label for="url">URL:</label>
+            <input type="text" name="url" id="url">
+        </div>
+        <!-- Champ pour saisir le paramètre d'entrée (affiché pour les tâches sql_injection et input_validation) -->
+        <div id="input_param_input" style="display:none;">
+            <label for="input_param">Paramètre d'Entrée:</label>
+            <input type="text" name="input_param" id="input_param">
+        </div>
+        <!-- Champ pour saisir la réponse (affiché pour la tâche sensitive_data_exposure) -->
+        <div id="response_input" style="display:none;">
+            <label for="response">Réponse:</label>
+            <input type="text" name="response" id="response">
+        </div>
+        <!-- Bouton pour exécuter la tâche sélectionnée -->
+        <button type="submit">Exécuter</button>
+    </form>
+    <!-- Affichage du résultat de la tâche -->
+    {% if result %}
+        <h2>Résultat:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+    <!-- Script JavaScript pour afficher les champs de saisie en fonction de la tâche sélectionnée -->
+    <script>
+        function showInputFields() {
+            var task = document.getElementById('task').value;
+            // Affichage ou masquage des champs en fonction de la tâche sélectionnée
+            document.getElementById('ip_input').style.display = (task === 'port_scan' || task === 'security_config') ? 'block' : 'none';
+            document.getElementById('url_input').style.display = (task === 'xss_test') ? 'block' : 'none';
+            document.getElementById('input_param_input').style.display = (task === 'sql_injection' || task === 'input_validation') ? 'block' : 'none';
+            document.getElementById('response_input').style.display = (task === 'sensitive_data_exposure') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
